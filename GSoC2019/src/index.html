@@ -145,25 +145,39 @@
         
     }
 
-
+    function filterNodes(data, id) {
+      let filteredNodes = new Object();
+	    filteredNodes.links = data.links.filter((link) => {
+		    return link.source  === id || link.target === id;
+	    });
+	    
+	    const sources = filteredNodes.links.map(link => link.source);
+      const targets = filteredNodes.links.map(link => link.target);
+	    filteredNodes.nodes = data.nodes.filter((node) => {
+		    return targets.includes(node.id) || sources.includes(node.id) || node.id === id;
+	    });
+	   
+      return filteredNodes;
+    }
     const MAX_FONT_SIZE = 6;//0.15;
     const ending = '...';
     const MIN_FONT_SIZE = 0.08;
 
     window.devicePixelRatio = 1; // use standard resolution in retina displays
     //Start by loading nodes and links from a file
-    fetch('fdg_input_file.json').then(res => res.json()).then(data => {
+    fetch('trial.json').then(res => res.json()).then(data => {
 
       let hoverLink = null;
       let hoverNode = null;
+      let filteredData = filterNodes(data, "icij");
       highlightNodes = new Map();
-      linksPerDomains = indexBy(data.links, ['source', 'target']);// 
+      linksPerDomains = indexBy(filteredData.links, ['source', 'target']);// 
 
       const elem = document.getElementById('graph');
       const Graph = ForceGraph()
       (elem)
       .backgroundColor('#07263b')
-      .graphData(data)
+      .graphData(filteredData)
       // links
       .onLinkHover(link => hoverLink = link)
       .linkWidth(link => (hoverLink === link || highlightNodes.has(link.source.id) || highlightNodes.has(link.target.id) ) ? 2 : 1)

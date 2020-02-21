@@ -1,0 +1,18 @@
+{
+
+    "nodes": [
+        {"cc_licenses": {"('by-nc', '4.0')": 1, "('by-nc', '3.0')": 1, "('by-sa', '3.0')": 20678}, "id": "icij", "images": "72258", "licenses_qty": 20683, "links_qty": 32, "node_size": 10, "provider_domain": "offshoreleaks.icij.org"}, 
+        {"cc_licenses": {"('by', '2.5')": 1, "('by-nc-sa', '3.0')": 8, "('by-nc-nd', '4.0')": 1, "('by-nd', '4.0')": 1, "('by-nc', '4.0')": 3, "('by', '4.0')": 26, "('by', '3.0')": 8, "('by-sa', '4.0')": 7, "('by-sa', '2.0')": 1, "('by-sa', '2.5')": 2, "('by-nc', '3.0')": 3, "('by-nc-sa', '4.0')": 5, "('by-nc-nd', '3.0')": 6, "('by-nd', '3.0')": 1, "('cc0', '1.0')": 5883, "('by-sa', '3.0')": 9, "('by-nc-sa', '2.0')": 2}, "id": "re3data", "images": "30344", "licenses_qty": 18169, "links_qty": 772, "node_size": 8, "provider_domain": "www.re3data.org"}, 
+        {"cc_licenses": {"('by-sa', '3.0')": 17252}, "id": "coveralia", "images": "247160", "licenses_qty": 17252, "links_qty": 16, "node_size": 8, "provider_domain": "cine.coveralia.com"}, 
+        {"cc_licenses": {"('by-nc-nd', '2.0')": 6054, "('by-nc', '2.0')": 1}, "id": "onlineopinion", "images": "137152", "licenses_qty": 12111, "links_qty": 2894, "node_size": 5, "provider_domain": "www.onlineopinion.com.au"}, 
+        {"cc_licenses": {"('by', '3.0')": 7, "('by-nc', '2.5')": 103, "('by-sa', '2.5')": 130, "('by-nc-nd', '2.5')": 5092, "('by-nc-sa', '3.0')": 26, "('by-nd', '2.5')": 4, "('by', '2.5')": 732, "('by-nc-nd', '3.0')": 189, "('by-nc-sa', '2.5')": 330, "('by', '4.0')": 1456, "('by-sa', '3.0')": 1}, "id": "pucp", "images": "46580", "licenses_qty": 11777, "links_qty": 110, "node_size": 5, "provider_domain": "educast.pucp.edu.pe"}
+    ],
+    "links": [
+        {"source": "icij", "target": "coveralia", "value": 20681},
+        {"source": "coveralia", "target": "onlineopinion", "value": 2054},
+        {"source": "pucp", "target": "onlineopinion", "value": 5000},
+        {"source": "re3data", "target": "coveralia", "value": 32322},
+        {"source": "re3data", "target": "onlineopinion", "value": 13245},
+        {"source": "icij", "target": "re3data", "value": 31111}
+    ]
+}
